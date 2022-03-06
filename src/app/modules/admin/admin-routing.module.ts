@@ -6,6 +6,7 @@ import { AddgroundComponent } from './components/addground/addground.component';
 import { EditgroundComponent } from './components/editground/editground.component';
 import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { EditgrdComponent } from './components/editground/editgrd/editgrd.component';
+import { DeletegroundComponent } from './components/editground/deleteground/deleteground.component';
 
 const routes: Routes = [
   {path: '',component: AdminDashboardComponent,
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'addadmin', component: AddadminComponent },
       { path: 'addground', component: AddgroundComponent },
       { path: 'editground', component: EditgroundComponent },
+      { path: 'deleteground', component: DeletegroundComponent },
       { path: 'editgrd', component: EditgrdComponent },
       { path: '', redirectTo: '/admin/home', pathMatch: 'full' },
     ],

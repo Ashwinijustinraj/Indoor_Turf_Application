@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/IndoorTurf",
+            "outputPath": "dist/angular-routing",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "IndoorTurf:build:production"
+              "browserTarget": "angular-routing:build:production"
             },
             "development": {
-              "browserTarget": "IndoorTurf:build:development"
+              "browserTarget": "angular-routing:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IndoorTurf:build"
+            "browserTarget": "angular-routing:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "IndoorTurf"
+  "defaultProject": "angular-routing"
 }

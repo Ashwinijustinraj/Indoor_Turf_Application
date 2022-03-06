@@ -9,6 +9,7 @@ import { EditgroundComponent } from './components/editground/editground.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddadminComponent } from './components/addadmin/addadmin.component';
 import { EditgrdComponent } from './components/editground/editgrd/editgrd.component';
+import { DeletegroundComponent } from './components/editground/deleteground/deleteground.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EditgrdComponent } from './components/editground/editgrd/editgrd.compon
     AddgroundComponent,
     EditgroundComponent,
     AddadminComponent,
-    EditgrdComponent
+    EditgrdComponent,
+    DeletegroundComponent
   ],
   imports: [
     CommonModule,

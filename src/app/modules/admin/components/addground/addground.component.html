@@ -35,9 +35,9 @@
                    id="GroundDescription" class="form-control" formControlName="GroundDescription" />
                     <label>Ground Description</label>
                   </div>
-                  <div class="mb-3">
-                    <label for="formFile" class="form-label">Upload Ground image file</label>
-                    <input class="form-control" type="file" id="formFile">
+                  <div class="form-group">
+                    <label class="form-label">Image Url</label>
+                    <input type="text" placeholder="imageUrl" class="form-control" formControlName="imageFile" id="imageFile"/>
                   </div>
   
                <button class="btn btn-primary" type="submit" (click)=handleGround() >Save Changes</button>
