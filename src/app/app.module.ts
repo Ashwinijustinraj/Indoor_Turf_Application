@@ -10,6 +10,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MobileLoginComponent } from './components/mobile-login/mobile-login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MobileLoginComponent } from './components/mobile-login/mobile-login.com
     LoginComponent,
     ForgotPasswordComponent,
     NotFoundComponent,
-    MobileLoginComponent
+    MobileLoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
