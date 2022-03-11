@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MobileLoginComponent } from './components/mobile-login/mobile-login.component';
 import { RegisterComponent } from './components/register/register.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

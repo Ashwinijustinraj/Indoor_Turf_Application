@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.auth.isLoggedIn()) {
-      this.router.navigate(['admin']);
+      this.router.navigate(['user']);
     }
   }
   get f(){
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
       this.auth.login(this.Form.value).subscribe(
         (result) => {
           console.log(result);
-          this.router.navigate(['/admin']);
         },
         (err: Error) => {
           alert(err.message);

@@ -54,9 +54,9 @@
             </div>
         </div>
         </div>
-        
+        <input type="hidden" name="role" value="user">
         <div class="form-group">
-            <button type="submit" [disabled]="loading" class="btn btn-primary">
+            <button type="submit" [disabled]="!loading" class="btn btn-primary">
                 Register
             </button>
             <a routerLink="../login" href="" class="btn btn-link">Cancel</a>
