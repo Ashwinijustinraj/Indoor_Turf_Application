@@ -10,24 +10,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  form=new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    userName: new FormControl(''),
+  signupform=new FormGroup({
     email: new FormControl(''),
+    username: new FormControl(''),
+    mobileNumber: new FormControl(''),
     password: new FormControl(''), 
-    confirmpassword: new FormControl(''),  
+    confirmPassword: new FormControl('')  
 });
   submitted = false;
   loading = false;
   errorMessage = '';
   constructor(private formBuilder: FormBuilder,private router: Router, private route: ActivatedRoute, private auth: AuthService) { }
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      userName: ['', Validators.required],
+    this.signupform = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
+      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
      
@@ -36,16 +34,16 @@ export class RegisterComponent implements OnInit {
   });
   }
   get f(): { [key: string]: AbstractControl }{
-    return this.form.controls; }
+    return this.signupform.controls; }
     onSubmit(): void {
       this.submitted=true;
       this.loading=false;
-      if (this.form.invalid) {
+      if (this.signupform.invalid) {
         
         return;
       }
       
-    if (this.form.valid) {
+    if (this.signupform.valid) {
       
     } 
     }

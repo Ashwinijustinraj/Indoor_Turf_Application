@@ -1,69 +1,56 @@
 <div class="bgbar">
     <div class="container pt-5 pb-5">
-        <form class="d-flex justify-content-center">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
-        <div class="col-12">
-            <div class="d-flex flex-wrap justify-content-around pt-5">
-               
-                <div class="card shadow mt-2 grid">
-                    <img class="card-img-top " src="../.jpg" class="rounded" width="304" height="236" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Card description</p>
-                        <a class="btn btn-primary me-2" routerLink="../editgrd">Edit Ground</a>
-                        <a class="btn btn-danger" routerLink="../deleteground">Delete ground</a>
-                    </div>
+        <div class="row justify-content-center h-100">
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="card shadow mt-2 ">
+                    <div class="card-body px-5">
+                      <div class="card-header mb-2">
+                        <div class="card-title"><h5>Edit Ground</h5></div></div>
+            <form class="form"> 
+              <div class="form-group form-floating">
+                <input type="text"
+                id="editName" placeholder="Edit Name" [(ngModel)]="ground.GroundName"
+                class="form-control" formControlName="editName" />
+                <label>Enter Name</label>
+              </div>
+              <div class="form-group form-floating">
+                  <input type="text"
+                  id="editTiming" placeholder="Edit Timing" [(ngModel)]="ground.GroundTiming"
+                  class="form-control" formControlName="editTiming" />
+                  <label>Enter the Available Timing</label>
+              </div>
+                <div class="form-group form-floating">
+                  <input type="text"
+                   id="editAddress" placeholder="Edit Address" [(ngModel)]="ground.GroundAddress"
+                   class="form-control" formControlName="editAddress" />
+                   <label>Enter the address</label>
                 </div>
-                <div class="card shadow mt-2">
-                    <img class="card-img-top" src="../.jpg" class="rounded" width="304" height="236" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Card description</p>
-                      <a class="btn btn-primary me-2" routerLink="../editgrd">Edit Ground</a>
-                      <a class="btn btn-danger" routerLink="../deleteground">Delete ground</a>
-                    </div>
-                  </div>
-                <div class="card shadow mt-2">
-                    <img class="card-img-top" src="../.jpg" class="rounded" width="304" height="236" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Card description</p>
-                        <a class="btn btn-primary me-2" routerLink="../editgrd">Edit Ground</a>
-                        <a class="btn btn-danger" routerLink="../deleteground">Delete ground</a>
-                    </div>
+                <div class="form-group form-floating">
+                  <input type="text"
+                   id="editImageUrl" placeholder="ImageUrl" [(ngModel)]="ground.GroundImageURL"
+                   class="form-control" formControlName="editImageUrl" />
+                   <label>Enter the Image Url</label>
                 </div>
-            </div>
-            <div class="d-flex flex-wrap justify-content-around pt-5">
-                <div class="card shadow mt-2">
-                    <img class="card-img-top" src="../.jpg" class="rounded" width="304" height="236" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Card description</p>
-                        <a class="btn btn-primary me-2" routerLink="../editgrd">Edit Ground</a>
-                        <a class="btn btn-danger" routerLink="../deleteground">Delete ground</a>
-                    </div>
+                <div class="form-group form-floating">
+                  <input type="text"
+                  id="editPrice" placeholder="Price" [(ngModel)]="ground.price"
+                  class="form-control" formControlName="editPrice"/>
+                  <label>Enter the Price</label>
                 </div>
-                <div class="card shadow mt-2">
-                    <img class="card-img-top" src="../.jpg" class="rounded" width="304" height="236" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Card description</p>
-                        <a class="btn btn-primary me-2" routerLink="../editgrd">Edit ground</a>
-                        <a class="btn btn-danger" routerLink="../deleteground">Delete ground</a>
-                    </div>
+                <div class="form-group  form-floating">
+                  <input type="text" placeholder="Ground Description" [(ngModel)]="ground.GroundDescription"
+                 id="editDescription" class="form-control" formControlName="editDescription" />
+                  <label>Description</label>
                 </div>
-                <div class="card shadow mt-2">
-                    <img class="card-img-top" src="../.jpg" class="rounded" width="304" height="236" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Card description</p>
-                        <a class="btn btn-primary me-2" routerLink="../editgrd">Edit ground</a>
-                        <a class="btn btn-danger" routerLink="../deleteground">Delete ground</a>
+  
+               <button class="btn btn-primary me-2" type="submit" id="updateButton" (click)=handleGround()>Update</button>
+               <a routerLink="../dashboard" href="" class="btn btn-white-link">Cancel</a>
+              </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
+    
+  

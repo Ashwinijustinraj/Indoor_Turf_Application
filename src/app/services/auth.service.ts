@@ -1,12 +1,28 @@
 import { Observable, of, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { login } from '../shared/login';
+import { User } from '../shared/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private http:HttpClient) {}
+  isUserPresent(login:login):Observable<any>{
+    return this.http.post<any>("http://localhost:8080/user/login",login);
+  }
+  isAdminPresent(login:login):Observable<any>{
+    return this.http.post<any>("http://localhost:8080/admin/login",login);
+  }
+  saveUser(user:User):Observable<any>{
+    return this.http.post<any>("http://localhost:8080/user/signup",user);
+  }
+  saveAdmin(user:User):Observable<any>{
+    return this.http.post<any>("http://localhost:8080/admin/signup",user);
+  }
+
 
   setToken(token: string): void {
     localStorage.setItem('token', token);

@@ -7,8 +7,8 @@
                     <h2>Welcome</h2>
                 </div>
                 <p class="subtitle">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
-                    details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your mobileNumber.&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;You will receive OTP...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <form [formGroup]="Form" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <input type="text" id="mobileNumber" placeholder="mobileNumber" class="form-control" formControlName="mobileNumber"
@@ -18,7 +18,8 @@
                                 <div *ngIf="f['mobileNumber'].errors['pattern']">Please, Enter 10 digit Mobile Number.</div>  
                             </div>  
                     </div>
-                    
+                    <button type="button" class="btn btn-success w-100" id="verify">verify</button>
+
                     <div class="form-group">
                         <input type="password" id="password" placeholder="Password" class="form-control"
                             formControlName="password" name="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"/>
@@ -31,7 +32,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-primary w-100" id="Mobilelogin">Login</button>
-                    <button type="button" class="btn btn-primary w-100" routerLink="../login" id="Login">Login with Email</button>
+                    <button type="button" class="btn btn-dark w-100" routerLink="../login" id="Login">Login with Email</button>
                 </form>
             </div>
             

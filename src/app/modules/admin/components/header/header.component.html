@@ -6,24 +6,39 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
-            <ul class="navbar-nav ml-auto col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <ul class="navbar-nav ml-auto col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="./home">Home
+                    <a class="nav-link" id="homeButton" routerLink="./home">Home
                         <span class="sr-only"></span>
                     </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="./addground">Add Ground</a>
+                    <a class="nav-link" id="adminAddGround" routerLink="./addGround">Add Ground
+                        <span class="sr-only"></span>
+                    </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="./editground">Ground Profile</a>
-                </li></ul>
+                    <a class="nav-link" id="adminGroundProfile" routerLink="./dashboard">Ground Profile
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" id="ProfileView" routerLink="./displayusers" >Display user
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                
+                </ul>
                 <li class=" nav-item" role="button">
-                    <a class="nav-link btn btn-outline-light btn-sm me-3" routerLink="./addadmin">Add Admin</a>
+                    <a class="nav-link btn btn-outline-light btn-sm me-3" routerLink="./signup">Add Admin
+                        <span class="sr-only"></span>
+                    </a>
                 </li>
                 <li class=" nav-item" role="button" >
-                    <a class="nav-link text-dark btn btn-warning btn-sm me-3" (click)="logout()">Logout</a>
+                    <a class="nav-link text-dark btn btn-warning btn-sm me-3" id="logout" (click)="logout()">Logout</a>
                 </li>
         </div>
     </div>
 </nav>
+<router-outlet></router-outlet>
+<router-outlet name="modal"></router-outlet>

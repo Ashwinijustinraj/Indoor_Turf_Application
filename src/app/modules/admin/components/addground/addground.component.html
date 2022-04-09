@@ -4,44 +4,48 @@
             <div class="d-flex flex-wrap justify-content-center">
                 <div class="card shadow mt-2 ">
                     <div class="card-body px-5">
-                    <h5 class="card-title">Add Ground</h5>
+                      <div class="card-header mb-2">
+                    <div class="card-title"><h5>Add Ground</h5></div></div>
             <form class="form"> 
                 <div class="form-group form-floating">
                   <input type="text"
-                  id="GroundName" placeholder="Ground Name" 
-                  class="form-control" formControlName="GroundName" />
-                  <label>Ground Name</label>
+                  id="addName" placeholder="Enter Name" [(ngModel)]="ground.GroundName"
+                  class="form-control" formControlName="addName" />
+                  <label>Enter Name</label>
                 </div>
                 <div class="form-group form-floating">
                     <input type="text"
-                    id="GroundPrice" placeholder="Ground Price" 
-                    class="form-control" formControlName="GroundPrice" />
-                    <label>Ground Price</label>
+                    id="addTiming" placeholder="Available Timing" [(ngModel)]="ground.GroundTiming"
+                    class="form-control" formControlName="addTiming" />
+                    <label>Enter the Available Timing</label>
                 </div>
                   <div class="form-group form-floating">
                     <input type="text"
-                     id="GroundLocation" placeholder="Ground Location" 
-                     class="form-control" formControlName="GroundLocation" />
-                     <label>Ground Location</label>
+                     id="addAddress" placeholder="Ground Address" [(ngModel)]="ground.GroundAddress"
+                     class="form-control" formControlName="addAddress" />
+                     <label>Enter the address</label>
                   </div>
                   <div class="form-group form-floating">
                     <input type="text"
-                    id="GameType" placeholder="Game Type" 
-                    class="form-control" formControlName="GameType"/>
-                    <label>Game Type</label>
+                     id="addImageUrl" placeholder="ImageUrl" [(ngModel)]="ground.GroundImageURL"
+                     class="form-control" formControlName="addImageUrl" />
+                     <label>Enter the Image Url</label>
+                  </div>
+                  <div class="form-group form-floating">
+                    <input type="text"
+                    id="addPrice" placeholder="Price" [(ngModel)]="ground.price"
+                    class="form-control" formControlName="addPrice"/>
+                    <label>Enter the Price</label>
                   </div>
                   <div class="form-group  form-floating">
-                    <input type="text" placeholder="Ground Description"
-                   id="GroundDescription" class="form-control" formControlName="GroundDescription" />
-                    <label>Ground Description</label>
+                    <input type="text" placeholder="Ground Description" [(ngModel)]="ground.GroundDescription"
+                   id="addDescription" class="form-control" formControlName="addDescription" />
+                    <label>Description</label>
                   </div>
-                  <div class="form-group">
-                    <label class="form-label">Image Url</label>
-                    <input type="text" placeholder="imageUrl" class="form-control" formControlName="imageFile" id="imageFile"/>
-                  </div>
+                  
   
-               <button class="btn btn-primary me-2" type="submit" (click)=handleGround() >Save Changes</button>
-               <a routerLink="../editground" href="" class="btn btn-white-link">Cancel</a>
+               <button class="btn btn-primary me-2" type="submit" id="addButton" (click)=handleGround() >Add</button>
+               <button type="button" routerLink="../dashboard" class="btn btn-white-link">Cancel</button>
               </form>
                     </div>
                 </div>

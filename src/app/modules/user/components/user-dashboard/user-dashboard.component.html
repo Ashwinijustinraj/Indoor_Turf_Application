@@ -1,22 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#"><h4>INDOOR TURF</h4><h6>User Page</h6></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarResponsive">
-            <ul class="navbar-nav ml-auto col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" routerLink="./home">Home
-                        <span class="sr-only"></span>
-                    </a>
-            </li>
-            </ul>
-                <li class=" nav-item" role="button" >
-                    <a class="nav-link text-dark btn btn-primary btn-sm me-3" (click)="logout()">Logout</a>
-                </li>
-        </div>
-    </div>
-</nav>
-<router-outlet></router-outlet>
+<div class="bgbar" id="dashBoard">
+  <div class="container pt-5 pb-5">
+      <form class="d-flex justify-content-center">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" id="searchButton" type="submit">Search</button>
+        </form>
+      <div class="col-12">
+          <div class="d-flex flex-wrap justify-content-around pt-5">
+          <div *ngFor="let ground of grounds">
+          <div class="card shadow mt-2 mb-4" id="grid{{ground.GroundID}}" (click)=bookGround(ground.GroundID)>
+              <img class="card-img-top" src="{{ground.GroundImageURL}}" class="rounded" width="286" height="236" alt="Card image cap">
+              <div class="card-body">
+                  <h4 class="card-title"><a [title]="ground.GroundName + ' details'">
+                      {{ ground.GroundName }}
+                    </a></h4>
+                    <p class="card-text"*ngIf="ground.GroundAddress">
+                      <strong> Place:</strong> {{ ground.GroundAddress }}</p>
+                  <p class="card-text"*ngIf="ground.GroundDescription">
+                      <strong> Description:</strong> {{ ground.GroundDescription }}</p>
+                      <p class="card-text"*ngIf="ground.GroundTiming">
+                        <strong> Timing:</strong> {{ ground.GroundTiming }}</p>
+                      <p class="card-text"*ngIf="ground.price">
+                       <strong> Price:</strong> {{ ground.price }}</p>
+              </div>
+          </div>
+      </div>
+      
+      </div>
+  </div>
+</div>
+ 

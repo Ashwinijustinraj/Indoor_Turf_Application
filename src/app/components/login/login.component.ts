@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  Form = new FormGroup({
+  loginform = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[
       Validators.required,
@@ -28,12 +28,12 @@ export class LoginComponent implements OnInit {
     }
   }
   get f(){
-    return this.Form.controls;
+    return this.loginform.controls;
   }
   onSubmit(): void {
     this.submitted = true;
-    if (this.Form.valid) {
-      this.auth.login(this.Form.value).subscribe(
+    if (this.loginform.valid) {
+      this.auth.login(this.loginform.value).subscribe(
         (result) => {
           console.log(result);
         },
@@ -43,4 +43,5 @@ export class LoginComponent implements OnInit {
       );
     } 
   }
+  
 }

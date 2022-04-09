@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditgrdComponent } from './editgrd.component';
+import { GroundComponent } from './ground.component';
 
-describe('EditgrdComponent', () => {
-  let component: EditgrdComponent;
-  let fixture: ComponentFixture<EditgrdComponent>;
+describe('GroundComponent', () => {
+  let component: GroundComponent;
+  let fixture: ComponentFixture<GroundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditgrdComponent ]
+      declarations: [ GroundComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditgrdComponent);
+    fixture = TestBed.createComponent(GroundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

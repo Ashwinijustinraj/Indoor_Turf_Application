@@ -9,10 +9,10 @@
                 <p class="subtitle">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
                     details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email"
-                            name="email" 
+                           name="email" 
                             [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
                  <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
                        <div *ngIf="f['email'].errors['required']">Email is required</div>
@@ -22,7 +22,8 @@
                     
                     <div class="form-group">
                         <input type="password" id="password" placeholder="Password" class="form-control"
-                            formControlName="password" name="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+                            formControlName="password" name="password" 
+                            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
                             />
                             <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                               <div *ngIf="f['password'].errors['required']">Password is required</div>
@@ -35,8 +36,8 @@
                             </div>
                     </div>
                     
-                    <button class="btn btn-primary w-100" [disabled]="loading" routerLink="../admin" type="submit">Login</button>
-                    <button type="button" class="btn btn-primary w-100" routerLink="../mlogin" id="MobileLogin">Login with Phone Number</button>
+                    <button class="btn btn-primary w-100" id="loginButton" [disabled]="!loginform.valid" routerLink="../admin" type="submit">Login</button>
+                    <button type="button" class="btn btn-dark w-100" routerLink="../mlogin" id="MobileLogin">Login with Phone Number</button>
                     <div class="form-group">
                         <div
                           class="alert alert-danger"
@@ -53,6 +54,6 @@
                 
         </div>
         <div class="card-footer text-left">
-        <small><a routerLink="../register">Register</a></small></div>
+        <p>New User?&nbsp;&nbsp;<small><a id="signupLink" routerLink="../signup">Sign Up</a></small></p></div>
     </div>
 </div>
