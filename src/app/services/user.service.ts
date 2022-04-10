@@ -7,8 +7,6 @@ import { User } from '../shared/user';
   providedIn: 'root'
 })
 export class UserService {
-  updateUser: any;
-  getUserbyid: any;
   
   private baseURL = "https://8080-cefcccadbaddebfdaffdacedbbebcbf.examlyiopb.examly.io/api/v1/Users";
   constructor(private http:HttpClient) { }

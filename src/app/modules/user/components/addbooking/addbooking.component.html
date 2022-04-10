@@ -9,27 +9,33 @@
             <div class="card-body px-5">
           <form class="form">
               <div>
-                  <input placeholder="Turfname" name="Turfname">
+                  <input placeholder="Turfname" name="Turfname" [(ngModel)]="booking.groundName"
+                  class="form-control" formControlName="groundName"/>
               </div>
                 <div>
-                  <input placeholder="Address" name="address">
+                  <input placeholder="Address" name="address" [(ngModel)]="booking.address"
+                  class="form-control" formControlName="address"/>
                 </div>
                 <div>
                   <input type="date" placeholder="From date:" id="editBookingDate" name="trip-start" value=""
-                  min="2020-03-01" max="2020-04-31">
+                  min="2020-03-01" max="2020-04-31" [(ngModel)]="booking.fromDate"
+                  class="form-control" formControlName="fromDate"/>
                 </div>
                 <div>
                   <input type="date" placeholder="To date:" id="editBookingDate1" name="trip-start" value=""
-                  min="2020-03-01" max="2020-04-31">
+                  min="2020-03-01" max="2020-04-31" [(ngModel)]="booking.toDate"
+                  class="form-control" formControlName="toDate"/>
                 </div>
                 <div>
-                  <input placeholder="No. of persons" name="noofpersons" id="editNoOfPerson">
+                  <input placeholder="No. of persons" name="noofpersons" id="editNoOfPerson" [(ngModel)]="booking.noOfPersons"
+                  class="form-control" formControlName="noOfPersons"/>
                 </div>
                 <div>
-                  <input placeholder="Total Price" name="Total price">
+                  <input placeholder="Total Price" name="Total price" [(ngModel)]="booking.totalPrice"
+                  class="form-control" formControlName="totalPrice"/>
                 </div>
-                <button  type="submit" class="btn btn-primary me-2" routerLink="../editbookedgrounds/:id">Edit Booking</button>
-             <button  type="submit" class="btn btn-warning" id="cancelBookingButton" routerLink="../deletebookedgrounds/:id">cancel Booking</button>
+                <button  type="submit" class="btn btn-primary me-2"  (click)=editBooking(booking.BookingId)>Edit Booking</button>
+             <button  type="submit" class="btn btn-warning" id="cancelBookingButton" (click)=deleteBooking(booking.BookingId)>cancel Booking</button>
             </form>
             
           </div>

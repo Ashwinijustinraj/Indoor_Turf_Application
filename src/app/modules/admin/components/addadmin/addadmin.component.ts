@@ -49,7 +49,7 @@ export class AddadminComponent implements OnInit {
         this.router.navigate(['/admin/displayusers']);
       },
       error=>{
-        console.log(error);
+        console.log(error)
         alert(error)
       }
     )

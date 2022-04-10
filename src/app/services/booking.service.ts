@@ -10,19 +10,19 @@ export class BookingService {
 
   constructor(private http:HttpClient) { }
   saveBooking(data:booking):Observable<any>{
-    return this.http.post<any>("http://localhost:8080/user/ground",data);
+    return this.http.post<any>("http://localhost:8080/user/addbooking",data);
   }
   editBooking(id:string,data:booking):Observable<any>{
-    return this.http.put<any>("http://localhost:8080/user/editbookedgrounds/"+id,data);
+    return this.http.put<any>("http://localhost:8080/user/editbooking/"+id,data);
   }
   deleteBooking(id:string):Observable<any>{
-    return this.http.delete<any>("http://localhost:8080/user/deletebookedgrounds/"+id);
+    return this.http.delete<any>("http://localhost:8080/user/deletebooking/"+id);
   }
   getBooking(id:string):Observable<any>{
-    return this.http.get<any>("http://localhost:8080/admin/"+id);
+    return this.http.get<any>("http://localhost:8080/user/groundById"+id);
   }
   bookedground(id:string):Observable<any>{
-    return this.http.post<any>("http://localhost:8080/user/bookedgrounds",id);
+    return this.http.get<any>("http://localhost:8080/user/getbookings"+id);
   }
   
 }

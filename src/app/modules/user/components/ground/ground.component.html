@@ -7,24 +7,30 @@
           <div class="card-header" >
             <div class="card-title">Available</div>
           </div>
-          <div class="card-title">Ground Name</div>
+          <div class="card-title">{{booking.groundName}}</div>
           <div class="card-body">
             <label for="place">Place :  </label>
-            <input id="place" placeholder="Enter place">
+            <input id="place" [(ngModel)]="booking.address"
+            class="form-control" formControlName="address"/>
         <br>
         <label for="fillFromDate">From :  </label>
         <input type="date" id="fillFromDate" name="From-Date" value=""
-               min="2020-03-01" max="2020-04-31">
+               min="2020-03-01" max="2020-04-31"
+               [(ngModel)]="booking.fromDate"
+                  class="form-control" formControlName="fromDate"/>
           <label for="fillToDate">To :  </label>
           <input type="date" id="fillToDate" name="To-Date" value=""
-                      min="2020-03-01" max="2020-04-31">
+                      min="2020-03-01" max="2020-04-31"[(ngModel)]="booking.toDate"
+                      class="form-control" formControlName="toDate"/>
            <br>
             <label for="noofpersons">No. of Persons:</label>
-            <input placeholder="Enter no. of persons" id="enterNoTicket">
+            <input placeholder="Enter no. of persons" id="enterNoTicket"
+            [(ngModel)]="booking.noOfPersons"
+                  class="form-control" formControlName="noOfPersons"/>
             <br>
-            <p style="padding: 5px;"> Price: per head 1500</p>
+            <p style="padding: 5px;"> Price: per head {{booking.totalPrice}}</p>
             <br>
-            <button class="btn btn-success w-50" id="bookButton" routerLink="../bookedgrounds">Book</button>
+            <button type="submit" class="btn btn-success w-50" id="bookButton" (click)="handleBooking()">Book</button>
             
           </div>
         </div>

@@ -17,10 +17,10 @@ export class AuthService {
     return this.http.post<any>("http://localhost:8080/admin/login",login);
   }
   saveUser(user:User):Observable<any>{
-    return this.http.post<any>("http://localhost:8080/user/signup",user);
+    return this.http.post<any>("http://localhost:8080/user/register",user);
   }
   saveAdmin(user:User):Observable<any>{
-    return this.http.post<any>("http://localhost:8080/admin/signup",user);
+    return this.http.post<any>("http://localhost:8080/admin/register",user);
   }
 
 
