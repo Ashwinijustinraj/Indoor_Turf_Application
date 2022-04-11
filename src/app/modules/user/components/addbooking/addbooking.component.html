@@ -7,7 +7,7 @@
               <div class="card-title">Booking Details</div>
             </div>
             <div class="card-body px-5">
-          <form class="form">
+          <form [formGroup]="addbooking" class="form">
               <div>
                   <input placeholder="Turfname" name="Turfname" [(ngModel)]="booking.groundName"
                   class="form-control" formControlName="groundName"/>

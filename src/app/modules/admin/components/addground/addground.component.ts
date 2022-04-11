@@ -11,12 +11,12 @@ import { ground } from 'src/app/shared/ground';
 })
 export class AddgroundComponent implements OnInit {
   addGroundForm: FormGroup =new FormGroup({
-    addName:new FormControl(''),
-    addImageUrl:new FormControl(''),
-    addAddress:new FormControl(''),
-    addDescription:new FormControl(''),
-    addTiming:new FormControl(''),
-    addPrice:new FormControl('')
+    GroundName:new FormControl(''),
+    GroundImageURL:new FormControl(''),
+    GroundAddress:new FormControl(''),
+    GroundDescription:new FormControl(''),
+    GroundTiming:new FormControl(''),
+    price:new FormControl('')
   })
  
   ground=new ground();
@@ -24,42 +24,12 @@ export class AddgroundComponent implements OnInit {
 
   ngOnInit(): void {
     this.addGroundForm = this.formBuilder.group({
-      addName: [
-        '', 
-        [Validators.required, 
-         
-        ]
-      ],
-      addImageUrl: [
-        '', 
-        [Validators.required]
-      ],
-      addAddress: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      addDescription: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.maxLength(40)
-        ]
-      ],
-      addTiming: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      addPrice: [
-        '',
-        [
-          Validators.required,
-        ]
-      ]
+      GroundName: ['', [Validators.required, ]],
+      GroundImageURL: ['', [Validators.required] ],
+      GroundAddress: ['',[Validators.required,]],
+      GroundDescription: ['', [ Validators.required, Validators.minLength(6), Validators.maxLength(40) ]],
+      GroundTiming: ['',[ Validators.required, ]],
+      price: ['',[Validators.required,]]
     })
   }
   handleGround(){

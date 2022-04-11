@@ -13,11 +13,11 @@ export class EditgroundComponent implements OnInit {
   id!:string;
 
   editGroundForm: FormGroup =new FormGroup({
-    groundName:new FormControl(''),
-    imageURL:new FormControl(''),
-    groundAddress:new FormControl(''),
-    groundDescription:new FormControl(''),
-    capacity:new FormControl(''),
+    GroundName:new FormControl(''),
+    GroundImageURL:new FormControl(''),
+    GroundAddress:new FormControl(''),
+    GroundDescription:new FormControl(''),
+    GroundTiming:new FormControl(''),
     price:new FormControl('')
   })
 

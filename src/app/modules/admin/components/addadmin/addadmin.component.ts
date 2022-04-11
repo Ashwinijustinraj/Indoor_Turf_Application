@@ -38,13 +38,11 @@ export class AddadminComponent implements OnInit {
     validator: MustMatch('password', 'confirmPassword')
   });
   }
-  onSubmit(): void {
-  }
   adminSignup(){
 
     this.service.saveAdmin(this.user).subscribe(
       data=>{
-        console.log(data);
+        console.log(data)
         alert("Admin added Successfully")
         this.router.navigate(['/admin/displayusers']);
       },

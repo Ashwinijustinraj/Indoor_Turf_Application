@@ -6,40 +6,40 @@
                     <div class="card-body px-5">
                       <div class="card-header mb-2">
                     <div class="card-title"><h5>Add Ground</h5></div></div>
-            <form class="form"> 
+            <form [formGroup]="addGroundForm" class="form"> 
                 <div class="form-group form-floating">
                   <input type="text"
                   id="addName" placeholder="Enter Name" [(ngModel)]="ground.GroundName"
-                  class="form-control" formControlName="addName" />
+                  class="form-control" formControlName="GroundName" />
                   <label>Enter Name</label>
                 </div>
                 <div class="form-group form-floating">
                     <input type="text"
                     id="addTiming" placeholder="Available Timing" [(ngModel)]="ground.GroundTiming"
-                    class="form-control" formControlName="addTiming" />
+                    class="form-control" formControlName="GroundTiming" />
                     <label>Enter the Available Timing</label>
                 </div>
                   <div class="form-group form-floating">
                     <input type="text"
                      id="addAddress" placeholder="Ground Address" [(ngModel)]="ground.GroundAddress"
-                     class="form-control" formControlName="addAddress" />
+                     class="form-control" formControlName="GroundAddress" />
                      <label>Enter the address</label>
                   </div>
                   <div class="form-group form-floating">
                     <input type="text"
                      id="addImageUrl" placeholder="ImageUrl" [(ngModel)]="ground.GroundImageURL"
-                     class="form-control" formControlName="addImageUrl" />
+                     class="form-control" formControlName="GroundImageURL" />
                      <label>Enter the Image Url</label>
                   </div>
                   <div class="form-group form-floating">
                     <input type="text"
                     id="addPrice" placeholder="Price" [(ngModel)]="ground.price"
-                    class="form-control" formControlName="addPrice"/>
+                    class="form-control" formControlName="price"/>
                     <label>Enter the Price</label>
                   </div>
                   <div class="form-group  form-floating">
                     <input type="text" placeholder="Ground Description" [(ngModel)]="ground.GroundDescription"
-                   id="addDescription" class="form-control" formControlName="addDescription" />
+                   id="addDescription" class="form-control" formControlName="GroundDescription" />
                     <label>Description</label>
                   </div>
                   
