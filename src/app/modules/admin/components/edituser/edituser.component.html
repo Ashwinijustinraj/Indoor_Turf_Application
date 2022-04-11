@@ -6,7 +6,7 @@
                 <div class="card-body px-5">
                   <div class="card-header mb-2">
                     <div class="card-title"><h5>Edit User</h5></div></div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" > 
+      <form [formGroup]="form" > 
         <div class="form-group form-floating">
             <input type="text" placeholder="Enter User Name" id="username" [(ngModel)]="user.username"
             class="form-control" formControlName="username"/>

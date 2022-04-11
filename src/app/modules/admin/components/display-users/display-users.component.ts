@@ -1,7 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MustMatch } from 'src/app/helpers/must-match.validator';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/shared/user';
 
 @Component({
   selector: 'app-display-users',
@@ -9,34 +12,40 @@ import { MustMatch } from 'src/app/helpers/must-match.validator';
   styleUrls: ['./display-users.component.scss']
 })
 export class DisplayUsersComponent implements OnInit {
-  form=new FormGroup({
-    username: new FormControl(''),
-    email: new FormControl(''),
-    role: new FormControl('User'),
-    mobileNumber: new FormControl(''),
-    password: new FormControl(''), 
-    confirmPassword: new FormControl('')  
-});
+  users!:User[];
 
   closeResult!: string;
 
-  constructor(private modalService: NgbModal, private formbuilder:FormBuilder) {}
+  constructor(private service:UserService,private router:Router, private formbuilder:FormBuilder) {}
 
-  openBackDropCustomClass(content: any) {
-    this.modalService.open(content, {backdropClass: 'light-blue-backdrop'});
-  }
   ngOnInit(): void {
-    this.form = this.formbuilder.group({
-      username: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-     
-  }, {
-    validator: MustMatch('password', 'confirmPassword')
-  });
+   this.getUsers();
   }
-  onSubmit(): void {
+
+  private getUsers(){
+    this.service.getAdminList().subscribe(
+      data=>{
+        this.users=data;
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+    this.service.getUserList().subscribe(
+      data=>{
+        this.users=data;
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+  }
+  
+  editUser(id:string){
+    this.router.navigate(['/admin/edituser' ,id]);
+  }
+
+  deleteUser(id:string){
+    this.router.navigate(['/admin/deleteuser' ,id]);
   }
 }

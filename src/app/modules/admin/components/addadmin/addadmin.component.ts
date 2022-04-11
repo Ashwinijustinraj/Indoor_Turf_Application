@@ -22,9 +22,8 @@ export class AddadminComponent implements OnInit {
     userRole:new FormControl('')
 });
 
-  
-
   constructor(private formbuilder:FormBuilder,private service:AuthService,private router:Router) {}
+  
   user=new User();
   ngOnInit(): void {
     this.form = this.formbuilder.group({

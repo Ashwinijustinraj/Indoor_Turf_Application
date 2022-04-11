@@ -47,8 +47,7 @@ export class EdituserComponent implements OnInit {
     }
   )
   }
-  onSubmit(): void {
-  }
+  
   editUser(){
 
     this.service.edituser(this.id,this.user).subscribe(

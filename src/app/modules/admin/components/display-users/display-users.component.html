@@ -5,7 +5,7 @@
     <table class="table mt-3">
         <thead>
             <tr>
-                <th scope="col">id</th>
+                <th scope="col">ID</th>
                 <th scope="col">User Name</th>
                 <th scope="col">Email-id</th>
                 <th scope="col">Role</th>
@@ -14,17 +14,17 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let user of users">
             <tr>
-                <td>1</td>
-                <td>Yadav424</td>
-                <td>yshashi45@gmail.com</td>
-                <td>User</td>
-                <td>9442025352</td>
-                <td>--</td>
+                <td><p *ngIf="user.UserID">{{ user.UserID }}</p></td>
+                <td><p *ngIf="user.username">{{ user.username }}</p></td>
+                <td><p *ngIf="user.email">{{ user.email }}</p></td>
+                <td><p *ngIf="user.userRole">{{ user.userRole }}</p></td>
+                <td><p *ngIf="user.mobileNumber">{{ user.mobileNumber }}</p></td>
+                <td><p *ngIf="user.password">{{ user.password }}</p></td>
                 <td>
-                    <button class="btn btn-info" routerLink="../edituser">Edit</button>
-                    <button class="btn btn-danger mx-3" routerLink="../deleteuser">Delete</button>
+                    <button class="btn btn-info" (click)=editUser(user.UserID)>Edit</button>
+                    <button class="btn btn-danger mx-3" (click)=deleteUser(user.UserID)>Delete</button>
                 </td>
             </tr>
         </tbody>

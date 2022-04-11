@@ -8,8 +8,9 @@
             <div class="card-title">Available</div>
           </div>
           <div [formGroup]="bookingform" class="form">
-          <div class="card-title">{{booking.groundName}}</div>
+            
           <div class="card-body">
+            <h5 class="card-title"><a [title]="booking.groundName + ' details'">{{booking.groundName}}</a></h5>
             <label for="place">Place :  </label>
             <input id="place" [(ngModel)]="booking.address"
             class="form-control" formControlName="address"/>

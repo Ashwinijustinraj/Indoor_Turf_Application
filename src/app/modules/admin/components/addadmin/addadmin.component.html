@@ -6,7 +6,7 @@
             <div class="card-body px-5">
               <div class="card-header mb-2">
                 <div class="card-title"><h5>Admin Signup</h5></div></div>
-  <form [formGroup]="form" > 
+  <form [formGroup]="form" class="form"> 
     <div class="form-group form-floating">
         <input type="text" placeholder="Enter User Name" id="username" [(ngModel)]="user.username"
         class="form-control" formControlName="username"/>
@@ -36,8 +36,8 @@
       <input type = "hidden" placeholder="userRole" id="userRole" value="admin" [(ngModel)]="user.userRole"
       class="form-control" formControlName="userRole"/>
     </div>
-    <button type="submit" class="btn btn-primary me-3" (change)="adminSignup()">Submit</button>
-    <a routerLink="../dashboard" href="" class="btn btn-white-link">Cancel</a>
+    <button type="submit" class="btn btn-primary me-3" id="signupButton" (change)="adminSignup()">Submit</button>
+    <button type="button" routerLink="../dashboard" href="" class="btn btn-white-link">Cancel</button>
     </form>
    </div>   
 </div>  
